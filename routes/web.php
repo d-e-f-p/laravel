@@ -13,9 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view("/", 'inicio');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::resource('cliente', \App\Http\Controllers\ClienteController::class);
+Route::resource('cliente', \App\Http\Controllers\ClienteController::class)->middleware("auth");
 Route::resource('empleado', \App\Http\Controllers\EmpleadoController::class);
 Route::resource('factura', \App\Http\Controllers\FacturaController::class);
 Route::resource('idioma', \App\Http\Controllers\IdiomaController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

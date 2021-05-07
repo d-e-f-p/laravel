@@ -1,4 +1,4 @@
-@extends("layout.layout");
+@extends("layout.layout")
 
 @section("contenido")
     <h1>Listado de clientes</h1>
