@@ -14,3 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view("/", 'inicio');
+
+Route::resource('cliente', \App\Http\Controllers\ClienteController::class);
+Route::resource('empleado', \App\Http\Controllers\EmpleadoController::class);
+Route::resource('factura', \App\Http\Controllers\FacturaController::class);
+Route::resource('idioma', \App\Http\Controllers\IdiomaController::class);
