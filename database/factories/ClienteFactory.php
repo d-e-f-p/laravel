@@ -22,7 +22,9 @@ class ClienteFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombre'=>$this->faker->name(),
+            'direccion'=>$this->faker->address(),
+            'telefono'=>$this->faker->phoneNumber()
         ];
     }
 }

@@ -16,6 +16,11 @@ class CreateIdiomasTable extends Migration
         Schema::create('idiomas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("idioma");
+            $table->foreignId("empleado")
+                ->references("id")
+                ->on("empleados")
+                ->cascadeOnDelete();
         });
     }
 

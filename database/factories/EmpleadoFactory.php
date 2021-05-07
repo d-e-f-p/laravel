@@ -21,8 +21,12 @@ class EmpleadoFactory extends Factory
      */
     public function definition()
     {
+        $estudios=['ESO', 'Bachillerato', 'Ciclo Medio', 'Ciclo Superior', 'Universidad'];
         return [
-            //
+            'nombre'=>$this->faker->name(),
+            'direccion'=>$this->faker->address(),
+            'telefono'=>$this->faker->phoneNumber(),
+            'estudios'=>$this->faker->randomElement($estudios)
         ];
     }
 }

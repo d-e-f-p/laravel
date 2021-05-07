@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Empleado;
 use App\Models\Idioma;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,8 +22,11 @@ class IdiomaFactory extends Factory
      */
     public function definition()
     {
+        $idiomas = ["Castellano", "Inglés", "Francés", "Aleman", "Catalán", "Aragonés", "Euskera", "Gallego"];
+        $empleados = Empleado::All("id");
         return [
-            //
+            'idioma'=>$this->faker->randomElement($idiomas),
+            'empleado'=>$this->faker->randomElement($empleados)
         ];
     }
 }

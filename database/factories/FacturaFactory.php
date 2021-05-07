@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Factura;
+use App\Models\Cliente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class FacturaFactory extends Factory
@@ -21,8 +22,11 @@ class FacturaFactory extends Factory
      */
     public function definition()
     {
+        $clientes = Cliente::All("id");
         return [
-            //
+            'fecha'=>$this->faker->date("Y-m-d", "now"),
+            'importe'=>$this->faker->randomFloat(2, 10, 3000),
+            'cliente'=>$this->faker->randomElement($clientes)
         ];
     }
 }
