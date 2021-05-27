@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::resource('cliente', \App\Http\Controllers\ClienteController::class)->middleware("auth");
