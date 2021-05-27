@@ -10,11 +10,14 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}"
 </head>
 <body>
-    <x-layout.cabecera class="h-15v bg-cabecera"/>
-    <x-layout.menu class="h-10v bg-gray-200"/>
-    <main class="h-65v bg-yellow-100">
-    @yield("contenido")
-    </main>
-    <x-layout.footer class="h-10v bg-green-600"/>
+    <div id="app">
+        <x-layout.cabecera class="h-15v bg-cabecera"/>
+        <x-layout.menu class="h-10v bg-gray-200"/>
+        <main class="h-65v bg-yellow-100 overflow-auto">
+        @yield("contenido")
+        </main>
+        <x-layout.footer class="h-10v bg-green-600"/>
+    </div>
+    <script src="{{asset('app/app.js')}}"></script>
 </body>
 </html>

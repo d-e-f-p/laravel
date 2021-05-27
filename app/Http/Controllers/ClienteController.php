@@ -15,6 +15,12 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::All();
+
+        $campos = $clientes[0]->getAttributes();
+        unset ($campos['created_at']);
+        unset ($campos['updated_at']);
+        $campos = array_keys($campos);
+
         return view('cliente.cliente', ["clientes"=>$clientes]);
     }
 
